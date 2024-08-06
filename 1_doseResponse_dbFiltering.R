@@ -1,9 +1,7 @@
-## USAGE: Dose Response Database Filtering Script
-# written by Harmony Martell
-# February 2024
+## Martell & Donner 2024: Headwinds to Understanding Stress Response Physiology: A Systematic Review Reveals Mismatch between Real and Simulated Marine Heatwaves
 
-## This script takes the complete coral bleaching database from Martell and Donner 2024
-## and filters observations that were from 
+## USAGE: Database Filtering Script: This script takes the complete coral bleaching database
+# and filters observations that were from 
 # 1. studies of non-coral organisms 
 # 2. studies with non adult coral lifestages
 # 3. studies of multiple stressors
@@ -15,18 +13,20 @@
 # 7. studies that used invalid Fv/Fm (i.e., Yi instead of Fv/Fm)
 # 8. studies of non-tropical Scleractinians (i.e., Mediterranean corals)
 
+# written by Harmony Martell February 2024
+
 rm(list = ls())
 
-setwd("~/Desktop/UBC/_Projects/doseResponse_analysis/writing/FinalDocs_ERL/polishedAnalyses/") # set the working directory
+setwd("~/Desktop/UBC/_Projects/doseResponse_analysis/writing/_PLoSOne_Submission/") # set the working directory
 
 ## load the data
-database=read.csv("unfilteredDatabase_test.csv", header=TRUE, stringsAsFactors=TRUE)
+database=read.csv("_1_unfilteredDatabase.csv", header=TRUE, stringsAsFactors=TRUE)
 database$sym = database$sym/10^6
 database$genus <- substr(database$species_name, 1, 5) # grabs first four characters of species names
 
 ### Examine the complete dataset
 names(database) # what variables are there
-#str(database) # what is the structure
+str(database) # what is the structure
 dim(database) # n = 2998
 length(unique(database$study_id))
 
@@ -95,7 +95,6 @@ dim(db7) # n = 951
 db8 <- db7 %>%
   filter(!study_id == "S0017")
 dim(db8) # n = 947
-count(db8$study_id)
 
 library(data.table)
-fwrite(db8,"filteredDatabase.csv")
+fwrite(db8,"_2_filteredDatabase.csv")
