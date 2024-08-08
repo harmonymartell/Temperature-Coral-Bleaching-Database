@@ -1,4 +1,4 @@
-### Martell & Donner 2024: Headwinds to Understanding Stress Response Physiology: A Systemic Review Reveals Mismatch between Real and Simulated Marine Heatwaves
+### Martell & Donner 2024: Headwinds to Understanding Stress Response Physiology: A Systematic Review Reveals Mismatch between Real and Simulated Marine Heatwaves
 
 ## USAGE: This script compares and plots heating metrics from observations in the database
 # against marine heatwaves on coral reefs
