@@ -1,5 +1,6 @@
-## USAGE: Dose Response Meta-Analysis heat parameter recalculating script
-# STEP FOUR: Recalculate heating parameters
+## Martell & Donner 2024: Headwinds to Understanding Stress Response Physiology: A Systematic Review Reveals Mismatch between Real and Simulated Marine Heatwaves
+
+## USAGE: Heat parameter calculating script
 
 # This script takes datetime and temperature data from a processed & formatted .csv file,
 # reads it into R, converts datetime from ISO POSIXct standardized format to unix timestamp, 
